@@ -13,10 +13,10 @@ function Products() {
     productsCart,
     loading,
   } = useContext(AppContext);
-  const router = useHistory();
   const [disable, setDisable] = useState(true);
   let total = 0;
-
+  
+  const router = useHistory();
   const test = useCallback(() => getProducts(), [getProducts]);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ function Products() {
       }
     };
     verifyToken();
-  }, [router]);
+  }, []);
 
   const handleClick = () => {
     localStorage.setItem('productCart', JSON.stringify(productsCart));
