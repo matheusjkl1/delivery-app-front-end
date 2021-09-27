@@ -1,0 +1,10 @@
+.main--details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 8em;
+}
+
+.main--sales {
+  text-align: center;
+}
