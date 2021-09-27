@@ -68,7 +68,7 @@ function Login() {
 
   const loginFunction = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/login', {
+    axios.post('https://matheus-mysql.herokuapp.com/login', {
       email,
       password,
     }).then((response) => {
