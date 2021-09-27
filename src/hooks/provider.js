@@ -19,7 +19,7 @@ function Provider({ children }) {
 
   const signIn = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:3001/login', { email, password });
+      const response = await axios.post('https://matheus-mysql.herokuapp.com/login', { email, password });
       setUser(response.data);
       if (response.data) {
         router.push('/customer/products');
@@ -36,7 +36,7 @@ function Provider({ children }) {
   const getProducts = async () => {
     if (products.length) return;
     try {
-      const response = await axios.get('http://localhost:3001/products');
+      const response = await axios.get('https://matheus-mysql.herokuapp.com/products');
       setProducts(response.data);
       const productObject = {};
       response.data.forEach(({ name, price }) => {
@@ -55,7 +55,7 @@ function Provider({ children }) {
 
   const getSellersId = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/seller');
+      const response = await axios.get('https://matheus-mysql.herokuapp.com/seller');
       setSellersId(response.data);
     } catch (error) {
       console.log(error);
@@ -65,7 +65,7 @@ function Provider({ children }) {
   const getSaleById = async () => {
     const userLocal = getLocalToken();
     try {
-      const response = await axios.get('http://localhost:3001/sales', {
+      const response = await axios.get('https://matheus-mysql.herokuapp.com/sales', {
         headers: { authorization: userLocal.token },
       });
       setSales(response.data);
@@ -87,7 +87,7 @@ function Provider({ children }) {
     } = sale;
 
     try {
-      const response = await axios.post('http://localhost:3001/sales', {
+      const response = await axios.post('https://matheus-mysql.herokuapp.com/sales', {
         sellerId, totalPrice, deliveryAddress, deliveryNumber, productCart,
       }, {
         headers: { authorization: token },

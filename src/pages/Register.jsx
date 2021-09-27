@@ -42,7 +42,7 @@ function RegisterUser() {
   const submitUser = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:3001/register', {
+    axios.post('https://matheus-mysql.herokuapp.com/register', {
       name: nameToRegister,
       email: emailToRegister,
       password: passwordToRegister,

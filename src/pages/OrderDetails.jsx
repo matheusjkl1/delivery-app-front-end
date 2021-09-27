@@ -21,7 +21,7 @@ function OrderDetails() {
     setUser(userLocal);
     const getSale = async () => {
       setTimeout(async () => {
-        const response = await axios.get(`http://localhost:3001/sales/${id}`);
+        const response = await axios.get(`https://matheus-mysql.herokuapp.com/sales/${id}`);
         setOrder(response.data);
         setStatus(response.data.sale.status);
       }, milisseconds);
@@ -33,7 +33,7 @@ function OrderDetails() {
   const handleClick = async (newStatus) => {
     const milisseconds = 1000;
     socket.emit('updateStatus', newStatus);
-    await axios.put(`http://localhost:3001/sales/${id}`, { newStatus });
+    await axios.put(`https://matheus-mysql.herokuapp.com/sales/${id}`, { newStatus });
     setUpdated(true);
     setTimeout(() => setUpdated(false), milisseconds);
   };

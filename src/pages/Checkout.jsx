@@ -25,7 +25,7 @@ function Checkout() {
   //   .filter(({ quantity }) => quantity > 0);
   useEffect(() => {
     getSellersId();
-  }, [getSellersId]);
+  }, []);
 
   const INITIAL_STATE = {
     sellerId: 2,

@@ -31,7 +31,7 @@ function Products() {
       const user = JSON.parse(localStorage.getItem('user'));
 
       try {
-        await axios.get('http://localhost:3001/login', {
+        await axios.get('https://matheus-mysql.herokuapp.com/login', {
           headers: { authorization: user.token },
         });
 
