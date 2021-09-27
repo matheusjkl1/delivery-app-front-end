@@ -28,7 +28,7 @@ function Login() {
       }
     };
     verifyToken();
-  }, []);
+  }, [router]);
 
   const PASSWORD_LENGTH_EXPECTED = 6;
 

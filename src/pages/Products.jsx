@@ -41,7 +41,7 @@ function Products() {
       }
     };
     verifyToken();
-  }, []);
+  }, [router]);
 
   const handleClick = () => {
     localStorage.setItem('productCart', JSON.stringify(productsCart));

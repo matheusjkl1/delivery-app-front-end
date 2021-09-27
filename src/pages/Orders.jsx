@@ -11,7 +11,7 @@ function Orders() {
     // const userLocal = JSON.parse(localStorage.getItem('user'));
     // setUser(userLocal);
     getSaleById();
-  }, []);
+  }, [getSaleById]);
 
   return (
     <div className="main">
