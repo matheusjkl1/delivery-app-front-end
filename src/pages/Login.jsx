@@ -112,7 +112,11 @@ function Login() {
         {/* </Link> */}
       </form>
       {notFoundError
-        ? <p data-testid="common_login__element-invalid-email">O usuário não existe</p>
+        ? (
+        <div class="notification is-danger is-light">
+          <p data-testid="common_login__element-invalid-email">O usuário não existe</p>
+        </div>
+        )
         : null}
     </div>
   );

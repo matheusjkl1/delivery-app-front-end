@@ -8,6 +8,7 @@ function RegisterUser() {
   const [nameToRegister, setNameToRegister] = useState('');
   const [emailToRegister, setEmailToRegister] = useState('');
   const [passwordToRegister, setPasswordToRegister] = useState('');
+  const [errorState, setErrorState] = useState(null);
   const { setUserInLocalStorage } = useContext(AppContext);
   const router = useHistory();
 
@@ -52,6 +53,7 @@ function RegisterUser() {
       router.push('customer/products');
     }).catch((err) => {
       console.error(err);
+      setErrorState('Usuario ja possui cadastro')
     });
   };
 
@@ -104,11 +106,9 @@ function RegisterUser() {
         >
           Cadastrar
         </button>
-        {/* <p
-          data-testid="common_register__element-invalid_register"
-        >
-          Elemento oculto (mensagem de erro)
-        </p> */}
+        {errorState && <div class="notification is-danger is-light">
+          <p  data-testid="common_register__element-invalid_register">{errorState}</p>
+        </div>}
       </form>
     </div>
   );
