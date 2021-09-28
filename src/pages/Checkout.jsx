@@ -19,7 +19,7 @@ function Checkout() {
   useEffect(() => {
     verifyUser();
     updateFilteredCart();
-  }, [verifyUser, updateFilteredCart]);
+  }, []);
 
   // const productCart = Object.values(JSON.parse(localStorage.getItem('productCart')))
   //   .filter(({ quantity }) => quantity > 0);
